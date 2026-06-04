@@ -1,0 +1,10 @@
+{
+  "domain": "justwatch_streams",
+  "name": "JustWatch Streams",
+  "version": "1.0.0",
+  "config_flow": true,
+  "single_config_entry": true,
+  "requirements": ["beautifulsoup4"],
+  "dependencies": [],
+  "codeowners": []
+}

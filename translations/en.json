@@ -1,0 +1,74 @@
+{
+  "title": "JustWatch Streams",
+  "config": {
+    "abort": {
+      "single_instance_allowed": "Only one JustWatch Streams service can be configured."
+    },
+    "error": {
+      "invalid_url": "Enter a JustWatch URL, not the page HTML source."
+    },
+    "initiate_flow": {
+      "reconfigure": "Configure providers",
+      "user": "Add service"
+    },
+    "step": {
+      "user": {
+        "title": "Set up JustWatch Streams",
+        "description": "Choose the streaming providers that should count as available for your films.",
+        "data": {
+          "providers": "Preferred streaming providers"
+        }
+      },
+      "reconfigure": {
+        "title": "Configure providers",
+        "description": "Change the preferred streaming providers. All films use this selection.",
+        "data": {
+          "providers": "Preferred streaming providers"
+        }
+      }
+    }
+  },
+  "options": {
+    "initiate_flow": {
+      "init": "Configure providers"
+    },
+    "step": {
+      "init": {
+        "title": "Configure providers",
+        "description": "Change the preferred streaming providers. All films use this selection.",
+        "data": {
+          "providers": "Preferred streaming providers"
+        }
+      }
+    }
+  },
+  "config_subentries": {
+    "film": {
+      "title": "Add film",
+      "initiate_flow": {
+        "reconfigure": "Configure film",
+        "user": "Add film"
+      },
+      "step": {
+        "user": {
+          "title": "Add film",
+          "description": "Add a film by entering its JustWatch URL.",
+          "data": {
+            "url": "JustWatch URL"
+          }
+        },
+        "reconfigure": {
+          "title": "Configure film",
+          "description": "Change the JustWatch URL for this film.",
+          "data": {
+            "url": "JustWatch URL"
+          }
+        }
+      },
+      "error": {
+        "already_configured": "This film has already been added.",
+        "invalid_url": "Enter a JustWatch URL, not the page HTML source."
+      }
+    }
+  }
+}
