@@ -8,6 +8,9 @@ Home Assistant custom integration that keeps track of when your favorite films b
 
 Instead of manually checking multiple platforms, this integration monitors JustWatch and creates sensors in Home Assistant for each film. You can use them in dashboards, notifications, or automations to instantly know when a movie becomes available on one of your preferred providers.
 
+> [!TIP]
+> **Use Case (Automations & Notifications):** Since each film is represented as a standard binary sensor in Home Assistant, you can easily set up automations! For example, you can create an automation that triggers when a film's state changes from `off` to `on` and sends a push notification to your mobile phone, so you instantly know when it becomes available on one of your preferred streaming services.
+
 ## Installation (HACS)
 
 [![Open your Home Assistant instance and open a repository inside the Home Assistant Community Store.](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=Renegaded66&repository=justwatch_streams&category=integration)
