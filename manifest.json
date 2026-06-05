@@ -1,7 +1,7 @@
 {
   "domain": "justwatch_streams",
   "name": "JustWatch Streams",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "documentation": "https://github.com/Renegaded66/justwatch_streams",
   "issue_tracker": "https://github.com/Renegaded66/justwatch_streams/issues",
   "codeowners": ["@Renegaded66"],

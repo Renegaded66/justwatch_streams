@@ -30,32 +30,55 @@ If the button doesn't work, you can add it manually:
 After restarting:
 
 1. Go to **Settings > Devices & services > Add integration**.
-2. Add **JustWatch Streams** and select your preferred streaming providers.
+2. Add **JustWatch Streams** to start the setup.
 
-Only one main JustWatch Streams service can be configured. Use **Configure providers** on the integration entry to change the preferred providers later.
+---
 
-## Add films
+## Setup & Configuration
 
-Open the JustWatch Streams integration entry and use **Add film**. Enter the JustWatch URL for a film, for example:
+### 1. Select Preferred Providers
+When you first configure the integration, you will be prompted to select your preferred streaming providers. These are the subscription-based services you actually use. By default, none are selected, so you can choose exactly the ones you want.
 
-```text
-https://www.justwatch.com/de/Film/Cars
-```
+You can modify your preferred providers at any time later by clicking **Configure providers** on the integration page.
 
-Each film creates one binary sensor:
+![Configure Providers](tutorial/1-configure_provider.png)
 
-- `on`: the film is available through at least one preferred subscription provider.
-- `off`: it is not available through the selected subscription providers.
+*Only one main JustWatch Streams service can be configured.*
 
-## Attributes
+### 2. Add Films
+To track when your favorite films become available:
 
-Each film sensor exposes useful attributes:
+1. Open the **JustWatch Streams** integration entry in Home Assistant.
+2. Click the **Add film** button.
+   ![Add Film Button](tutorial/2-add_film.png)
+3. Go to the [JustWatch website](https://www.justwatch.com), search for your desired film, and copy the browser URL.
+   ![Copy JustWatch URL](tutorial/3-copy_justwatch_url.png)
+4. Paste the URL into the Home Assistant dialog and click **Submit**.
+   ![Paste JustWatch URL](tutorial/4-paste_justwatch_url.png)
 
-- `free_streaming_providers`: selected subscription providers where the film is available.
-- `subscription_providers`: all subscription providers found on JustWatch.
-- `rent_providers`: providers where the film can be rented.
-- `buy_providers`: providers where the film can be bought.
-- `all_offers`: parsed offer details including type, price, currency, and URL.
+### 3. Monitoring Availability
+Each added film creates a binary sensor in Home Assistant:
+- **`on` (Available)**: The film is available on at least one of your preferred subscription providers.
+- **`off` (Not Available)**: The film is not available on any of your selected subscription providers.
+
+![View Availability](tutorial/5-view_availability.png)
+
+### 4. Viewing Details & Attributes
+You can easily see where a film is currently streaming, renting, or buying:
+
+1. Click on the film sensor to open the details dialog.
+   ![Click Details](tutorial/6-click_details.png)
+2. Look at the attributes under the details info to see exactly which services have the film available.
+   ![View Attributes](tutorial/7-view_attributes.png)
+
+#### Exposed Attributes:
+- `free_streaming_providers`: Selected subscription providers where the film is available.
+- `subscription_providers`: All subscription providers found on JustWatch.
+- `rent_providers`: Providers where the film can be rented.
+- `buy_providers`: Providers where the film can be bought.
+- `all_offers`: Parsed offer details including type, price, currency, and URL.
+
+---
 
 ## Updates
 
@@ -64,3 +87,12 @@ Films are refreshed when Home Assistant starts and every day at `00:00` local Ho
 ## Notes
 
 JustWatch page structure can change. This integration currently parses the structured JSON-LD data embedded in the film page.
+
+<small>*Note: Currently, this integration has only been tested and confirmed to work in Germany. Other country domains have not been tested yet.*</small>
+
+---
+
+## Disclaimer
+
+**Please read this carefully:**
+The author of this integration is not responsible for its usage or any consequences thereof. This integration scrapes data directly from the JustWatch website, which may violate their Terms of Service. Use this software at your own risk.

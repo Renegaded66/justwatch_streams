@@ -32,7 +32,7 @@ from .const import (
 
 def _providers_schema(default=None):
     return vol.Schema({
-        vol.Required(CONF_PROVIDERS, default=default or list(PROVIDERS)): SelectSelector(
+        vol.Required(CONF_PROVIDERS, default=default if default is not None else []): SelectSelector(
             SelectSelectorConfig(
                 mode=SelectSelectorMode.DROPDOWN,
                 multiple=True,
