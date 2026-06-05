@@ -1,13 +1,22 @@
 # JustWatch Streams
 
-Home Assistant custom integration that tracks whether films are available on your preferred streaming services according to JustWatch.
+Home Assistant custom integration that keeps track of when your favorite films become available on the streaming services you actually use.
 
-## Setup
+Instead of manually checking multiple platforms, this integration monitors JustWatch and creates sensors in Home Assistant for each film. You can use them in dashboards, notifications, or automations to instantly know when a movie becomes available on one of your preferred providers.
 
-1. Copy this folder to `custom_components/justwatch_streams`.
-2. Restart Home Assistant.
-3. Go to **Settings > Devices & services > Add integration**.
-4. Add **JustWatch Streams** and select your preferred streaming providers.
+## Installation (HACS)
+
+1. Open **HACS** in Home Assistant.
+2. Go to **Integrations**.
+3. Click **⋮ → Custom repositories**.
+4. Add this repository as a custom repository and select **Integration** as the category.
+5. Search for **JustWatch Streams** in HACS and install it.
+6. Restart Home Assistant.
+
+After restarting:
+
+1. Go to **Settings > Devices & services > Add integration**.
+2. Add **JustWatch Streams** and select your preferred streaming providers.
 
 Only one main JustWatch Streams service can be configured. Use **Configure providers** on the integration entry to change the preferred providers later.
 
