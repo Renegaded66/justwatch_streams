@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from datetime import date
 import json
 import logging
 
@@ -69,6 +70,21 @@ class JustWatchCoordinator(DataUpdateCoordinator):
             offer = action.get("expectsAcceptanceOf")
             if not isinstance(offer, dict):
                 continue
+
+            # Skip if the offer is not yet available
+            availability = offer.get("availability")
+            if isinstance(availability, str) and "NotYetAvailable" in availability:
+                continue
+
+            valid_from = offer.get("validFrom")
+            if isinstance(valid_from, str):
+                try:
+                    if len(valid_from) >= 10:
+                        valid_date = date.fromisoformat(valid_from[:10])
+                        if valid_date > date.today():
+                            continue
+                except ValueError:
+                    pass
 
             provider = self._provider_name(offer)
             if provider is None:
